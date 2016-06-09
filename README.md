@@ -1,4 +1,4 @@
-# Installation on Ubuntu
+# Installation on Fedora 23 and Ubuntu
 
 ## Clone the repo
 
@@ -16,6 +16,41 @@ You need to bring in the code of the plugins and their third-party dependencies 
 
 These steps are tedious, I know, but it has to be done only once and only for the
 [YouCompleteMe][3] plugin.
+
+### Fedora 23
+
+    sudo dnf install llvm llvm-devel python3-devel python-devel-2.7.11 cmake-3.4.3-1
+
+As non-root run the following commands to build [YouCompleteMe][3].
+
+    cd ~
+    
+    mkdir ycm_build
+    
+    cd ycm_build
+    
+    cmake -G "Unix Makefiles" \
+      -DUSE_SYSTEM_LIBCLANG=ON \
+      -DCMAKE_CXX_FLAGS="$(llvm-config --cppflags)" \
+      -DCMAKE_C_FLAGS="$(llvm-config --cflags)" \
+      -DUSE_CLANG_COMPLETER=ON \
+      . \
+      ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+
+    make -j4 ycm_support_libs
+
+Now you should see that there are `.so` files in your [YouCompleteMe][3]
+directory:
+
+    find ~/.vim/bundle/YouCompleteMe/ -name "*.so"
+
+The output should somewhat look like this:
+
+    .vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so
+    .vim/bundle/YouCompleteMe/third_party/ycmd/ycm_client_support.so
+    .vim/bundle/YouCompleteMe/third_party/ycmd/libclang.so
+
+### Ubuntu
 
 Follow the steps to install the development version of [LLVM via Apt][2]. This is needed to get the [YouCompleteMe][3] to work. Maybe you can also use the other versions but I like to have the development version.
 

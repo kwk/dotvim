@@ -93,7 +93,7 @@ abbreviate l" &ldquo;&rdquo;<left><left><left><left><left><left>
 abbreviate r" &rdquo;
 abbreviate l' &lsquo;
 abbreviate r' &rsquo;
-abbreviate "" &quot;&quot;<left><left><left><left><left>
+"abbreviate "" &quot;&quot;<left><left><left><left><left>
 
 abbreviate <? <?php?><left><left>
 
@@ -157,7 +157,7 @@ endif
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 " Press i to enter insert mode, and ii to exit.
-:imap ii <Esc>
+" :imap ii <Esc>
 
 " Press <F7> to jump to previous tab and <F8> to jump to next tab
 :nmap <F7> :tabp<CR>

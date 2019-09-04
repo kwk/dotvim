@@ -1,4 +1,4 @@
-# Installation on Fedora 23 and Ubuntu
+# Installation on Fedora and Ubuntu
 
 ## Clone the repo
 
@@ -17,9 +17,9 @@ You need to bring in the code of the plugins and their third-party dependencies 
 These steps are tedious, I know, but it has to be done only once and only for the
 [YouCompleteMe][3] plugin.
 
-### Fedora 23
+### Fedora
 
-    sudo dnf install llvm llvm-devel python3-devel python-devel-2.7.11 cmake-3.4.3-1
+    sudo dnf install cmake gcc-c++ make python3-devel
 
 As non-root run the following commands to build [YouCompleteMe][3].
 
